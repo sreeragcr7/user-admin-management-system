@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= renderData.locals.title %></title>
+    <meta name="description" content="<%= renderData.locals.description %>">
+    <link rel="stylesheet" href="/adminCss/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+</head>
+<body>
+
+     <!-- Display the error message if it exists -->
+    <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+    <p class="error p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3"><%= errorMessage %></p>
+    <% } %>
+
+
+    <div class="wrapper">
+        <form action="/admin/signup" method="POST">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" name="username" placeholder="name"  required autocomplete="off">
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <i class='bx bxs-lock' ></i>
+            </div>
+
+            <div class="remember-forget">
+                <label for=""><input type="checkbox" name="" id="">Remember me</label>
+                <a href="#">forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+
+            <div class="register-link">
+                <p>Don't have an account? <a href="#">Signup</a></p>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
